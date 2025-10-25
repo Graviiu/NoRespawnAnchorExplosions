@@ -23,7 +23,7 @@ public class NoRespawnAnchorExplosionsEvent implements Listener {
 
         if (e.getAction() != Action.RIGHT_CLICK_BLOCK) return;
 
-        if (item == null && block.getType() == Material.RESPAWN_ANCHOR) {
+        if ((item == null || item.getType() != Material.GLOWSTONE) && block.getType() == Material.RESPAWN_ANCHOR) {
 
             e.setCancelled(true);
             return;
